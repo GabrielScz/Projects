@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>gestorVentaLenteContacto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="../../style/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="container-fluid">
+        <main>
+            <div>
+                <h4 class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white; text-align: center">Venta de Lentes de Contacto</h4>
+            </div>
+            <br>
+            <div class="d-flex justify-content-end align-items-center">
+                <input type="search" class="formulario__input" name="search" id="txtSearch" placeholder="Search" style="width: 50%">
+                <button class="mt-2 formulario_select_btn m-2" style="border-color: #233A54; border-radius: 3px; color: #233A54" onclick="moduloVentaLenteContacto.buscarCliente();"><i class="fa fa-search"></i></button>
+            </div>
+            <br>
+            <div class="tabla-tamanio">
+                <table class="maximo table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tel. M</th>
+                            <th>Clave de Examen</th>
+                            <th>idLenteContacto</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblClientes">
+                </table>
+                <br>
+                <table class="maximo table">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>idExamenVista</th>
+                            <th>idGraduacion</th>
+                            <th>idLenteContacto</th>
+                            <th>Clave</th>
+                            <th>Descuento</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblExamenV">
+                </table>
+                <br>
+                <p class="formulario__label" style="border-radius: 3px; color: black">Subtotal: <span id="txtTotalVenta">$0.00</span></p>
+                <button class="formulario__btn" onclick="moduloVentaLenteContacto.generarPresupuestoLC();"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Comprar</button> 
+            </div>
+        </main>
+
+        <script src="https://kit.fontawesome.com/384403f204.js" crossorigin="anonymous"></script>
+        <script src="controller_VentaLentesContacto.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>

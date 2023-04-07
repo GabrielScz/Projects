@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Clientes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="../../style/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="container-fluid">
+        <main>
+            <div>
+                <h4 class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white; text-align: center">Gestor de Clientes</h4>
+            </div>
+            <br>
+            <div class="d-flex justify-content-end align-items-center">
+                <input type="search" class="formulario__input" name="search" id="txtSearch" placeholder="Search" style="width: 50%">
+                <button class="mt-2 formulario_select_btn m-2" style="border-color: #233A54; border-radius: 3px; color: #233A54" onclick="moduloClientes.buscarCliente();"><i class="fa fa-search"></i></button>
+            </div>
+            <br>
+            <form action="" class="formulario m-auto " id="formulario">
+
+                <div class="formulario__grupo" id="grupo__idPersona" hidden="hidden">
+                    <label for="txtIdPersona" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">idPersona</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="idPersona" id="txtIdPersona" placeholder="idPersona" disabled="disabled">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo se genera automaticamente.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__idCliente" hidden="hidden">
+                    <label for="txtIdCliente" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">idCliente</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="idCliente" id="txtIdCliente" placeholder="idCliente" disabled="disabled">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo se genera automaticamente.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="txtNombre" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="txtNombre" placeholder="Nombre">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__apaterno">
+                    <label for="txtApePaterno" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Apellido Paterno</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="apaterno" id="txtApePaterno" placeholder="Apellido Paterno">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__amaterno">
+                    <label for="txtApeMaterno" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">Apellido Materno</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="amaterno" id="txtApeMaterno" placeholder="Apellido Materno">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__gen">
+                    <label for="txtGenero" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Género</label>
+                    <div class="formulario__grupo-input">
+                        <select class="formulario__input" name="gen" id="txtGenero">
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                            <option value="O">Otro</option>
+                        </select>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe de contener un Género Masculino / Femenino u Otro</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__tc">
+                    <label for="txtTelefonoC" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">Teléfono de Casa</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="tc" id="txtTelefonoC" placeholder="Telefono de Casa">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe de contener 10 dígitos y solo puede contener números.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__tm">
+                    <label for="txtTelefonoM" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Teléfono Movil</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="tm" id="txtTelefonoM" placeholder="Telefono Movil">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe de contener 10 dígitos y solo puede contener números.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__email">
+                    <label for="txtCorreo" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Correo Electrónico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="email" id="txtCorreo" placeholder="johndoe@example.com">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo puede contener hasta 30 dígitos.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__nue">
+                    <label for="txtNumUnico" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">No. Cliente</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nue" id="txtNumUnico" placeholder="XXX-0000000" disabled="disabled">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo se genera automaticamente.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__calle">
+                    <label for="txtCalle" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Calle</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="calle" id="txtCalle" placeholder="Calle">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__colonia">
+                    <label for="txtColonia" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Colonia</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="colonia" id="txtColonia" placeholder="Colonia">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__num">
+                    <label for="txtNum" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Número</label>
+                    <div class="formulario__grupo-input">
+                        <input type="number" class="formulario__input" name="num" id="txtNum" placeholder=" 0000">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener números.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__cp">
+                    <label for="txtCodigoP" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Codigo Postal</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="cp" id="txtCodigoP" placeholder="00000">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener números.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__ciudad">
+                    <label for="txtCiudad" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Ciudad</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="ciudad" id="txtCiudad" placeholder="Leon">
+                        <i class="formulario__validacion-estado fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__estado">
+                    <label for="txtEstado" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Estado</label>
+                    <div class="formulario__grupo-input">
+                        <select class="formulario__input" name="estatus" id="txtEstado">
+                            <option>Aguascalientes</option>
+                            <option>Baja California</option>
+                            <option>Baja California Sur</option>
+                            <option>Campeche</option>
+                            <option>Chiapas</option>
+                            <option>Chihuahua</option>
+                            <option>Coahuila</option>
+                            <option>Colima</option>
+                            <option>Distrito Federal</option>
+                            <option>Durango</option>
+                            <option>Guanajuato</option>
+                            <option>Guerrero</option>
+                            <option>Hidalgo</option>
+                            <option>Jalisco</option>
+                            <option>México</option>
+                            <option>Michoacán</option>
+                            <option>Morelos</option>
+                            <option>Nayarit</option>
+                            <option>Nuevo León</option>
+                            <option>Oaxaca</option>
+                            <option>Puebla</option>
+                            <option>Querétaro</option>
+                            <option>Quintana Roo</option>
+                            <option>San Luis Potosí</option>
+                            <option>Sinaloa</option>
+                            <option>Sonora</option>
+                            <option>Tabasco</option>
+                            <option>Tamaulipas</option>
+                            <option>Tlaxcala</option>
+                            <option>Veracruz</option>
+                            <option>Yucatán</option>
+                            <option>Zacatecas </option>
+                        </select>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe de contener un Estado de la lista desplegable.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__fechan">
+                    <label for="txtFechaN" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Fecha de Nacimiento</label>
+                    <div class="formulario__grupo-input">
+                        <input type="date" class="formulario__input" name="fechan" id="txtFechaN" placeholder="12-12-2000">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe estar completo.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__estatus">
+                    <label for="txtEstatus" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">Estatus</label>
+                    <div class="formulario__grupo-input">
+                        <select class="formulario__input" name="estatus" id="txtEstatus">
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe de contener un estatus Activo / Inactivo.</p>
+                </div>
+            </form>
+        </main>
+        <br>
+        <div class="d-flex justify-content-around margin mt-2 buttons">
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloClientes.agregarCliente();" id="btnAdd">Agregar</button>
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloClientes.actualizarCliente();" id="btnUpdate">Actualizar</button>
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloClientes.activarCliente();" id="btnActive">Activar</button>
+            <button type="button" class="mt-2 formulario__btn disabled" onclick="moduloClientes.eliminarCliente();" id="btnDelete">Eliminar</button>
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloClientes.limpiarCliente();" id="btnClean">Limpiar</button>
+            <select class="formulario_select" style="border-color: #233A54; border-radius: 3px; color: #233A54" onclick="moduloClientes.showTable();" name="estatusTbl" id="txtEstatusS">
+                <option value="1">Activo</option>
+                <option value="0">Inactivo</option>
+            </select>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="tabla-tamanio" style="padding-bottom: 30px">
+            <table class="maximo table">
+                <thead>
+                    <tr>
+                        <th>idCliente</th>
+                        <th>Nombre</th>
+                        <th>A. Paterno</th>
+                        <th>A. Materno</th>
+                        <th>Genero</th>
+                        <th>Tel. M</th>
+                        <th>eMail</th>
+                        <th>Codigo P.</th>
+                        <th>Ciudad</th>
+                        <th>Estado</th>  
+                        <th>Fecha N.</th>
+                        <th>Estatus</th>
+                    </tr>
+                </thead>
+                <tbody id="tblClientes">
+            </table>
+        </div>
+        <script src="controller_Clientes.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://kit.fontawesome.com/384403f204.js" crossorigin="anonymous"></script>
+    </body>
+</html>

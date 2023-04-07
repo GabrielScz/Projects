@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LoginQualite</title>
+        <link rel="shortcut icon" href="resources/QUALITE.png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Carlos Sanchez">
+        <meta name="date" content="11/07/2022">
+        <link href="css/login.css" rel="stylesheet" type="text/css"/>
+        <link href="style/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    <div class="login100-form">
+                        <span class="login100-form-title">
+                            ¡Bienvenido!
+                        </span>
+                        <div class="wrap-input100" data-validate = "Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="email" id="txtUser">
+                            <span class="label-input100">User</span>
+                        </div>
+                        <div class="wrap-input100" data-validate="Password is required">
+                            <input class="input100" type="password" name="pass" id="txtPassword">
+                            <span class="label-input100">Password</span>
+                        </div>
+                        <div class="container-login100-form-btn" >
+                            <button class="login100-form-btn" onclick="iniciarSesion();">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                    <div class="login100-more" style="background-image: url('resources/loginImg.jpg.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/login.js"></script>
+        <script src="js/sweetalert2.all.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://kit.fontawesome.com/384403f204.js" crossorigin="anonymous"></script>
+    </body>
+</html>
+
+

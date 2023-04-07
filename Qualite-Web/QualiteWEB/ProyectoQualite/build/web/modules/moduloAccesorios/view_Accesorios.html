@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Accesorios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="../../style/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="container-fluid">
+        <main>
+            <div>
+                <h4 class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white; text-align: center">Gestor de Accesorios</h4>
+            </div>
+            <br>
+            <div class="d-flex justify-content-end align-items-center">
+                <input type="search" class="formulario__input" name="search" id="txtSearch" placeholder="Search" style="width: 50%">
+                <button class="mt-2 formulario_select_btn m-2" style="border-color: #233A54; border-radius: 3px; color: #233A54" onclick="moduloAccesorios.buscarAccesorio();"><i class="fa fa-search"></i></button>
+            </div>
+            <br>
+            <form action="" class="formulario m-auto " id="formulario">
+                <div class="formulario__grupo" id="grupo__idProducto" hidden="hidden">
+                    <label for="txtIdProducto" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">idProducto</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="idProducto" id="txtIdProducto" placeholder="idProducto" disabled="disabled">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo se genera automaticamente.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__idAccesorio" hidden="hidden">
+                    <label for="txtIdAccesorio" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">idAccesorio</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="idAccesorio" id="txtIdAccesorio" placeholder="idAccesorio" disabled="disabled">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo se genera automaticamente.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__cbarras">
+                    <label for="txtCodigoBarras" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">C. Barras</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="cbarras" id="txtCodigoBarras" placeholder="C. Barras" disabled="disabled">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo se genera automaticamente.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="txtNombre" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="txtNombre" placeholder="Nombre">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__marca">
+                    <label for="txtMarca" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Marca</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="marca" id="txtMarca" placeholder="Marca">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__pcompra">
+                    <label for="txtPrcCompra" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Precio de Compra</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="pcompra" id="txtPrcCompra" placeholder="Precio de Compra">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener números.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__pventa">
+                    <label for="txtPrcVenta" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Precio de Venta</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="pventa" id="txtPrcVenta" placeholder="Precio de Venta">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener números.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__existencias">
+                    <label for="txtExistencias" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Existencias</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="existencias" id="txtExistencias" placeholder="Existencias">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener números.</p>
+                </div>
+                <div class="formulario__grupo" id="grupo__estatus">
+                    <label for="txtEstatus" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">Estatus</label>
+                    <div class="formulario__grupo-input">
+                        <select class="formulario__input" name="estatus" id="txtEstatus">
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo debe de contener un estatus Activo / Inactivo.</p>
+                </div>
+            </form>
+        </main>
+        <br>
+        <div class="d-flex justify-content-around margin mt-2">
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloAccesorios.agregarAccesorio();" id="btnAdd">Agregar</button>
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloAccesorios.actualizarAccesorio();" id="btnUpdate">Actualizar</button>
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloAccesorios.activarAccesorio();" id="btnActive">Activar</button>
+            <button type="button" class="mt-2 formulario__btn disabled" onclick="moduloAccesorios.eliminarAccesorio();" id="btnDelete">Eliminar</button>
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloAccesorios.limpiarAccesorio();" id="btnClean">Limpiar</button>
+            <select class="formulario_select" style="border-color: #233A54; border-radius: 3px; color: #233A54" onclick="moduloAccesorios.showTable();" name="estatusTbl" id="txtEstatusS">
+                <option value="1">Activo</option>
+                <option value="0">Inactivo</option>
+            </select>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="tabla-tamanio" style="padding-bottom: 30px">
+            <table class="maximo table">
+                <thead>
+                    <tr>
+                        <th>idAccesorio</th>
+                        <th>Marca</th>
+                        <th>Nombre</th>
+                        <th>Precio Compra</th>
+                        <th>Precio Venta</th>
+                        <th>Existencia</th>
+                        <th>Estatus</th>
+                    </tr>
+                </thead>
+                <tbody id="tblAccesorios">
+            </table>
+        </div>
+        <script src="https://kit.fontawesome.com/384403f204.js" crossorigin="anonymous"></script>
+        <script src="controller_Accesorios.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>

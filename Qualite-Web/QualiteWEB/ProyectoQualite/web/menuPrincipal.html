@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Menu Principal</title>
+        <link rel="shortcut icon" href="resources/QUALITE.png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Carlos Sanchez">
+        <meta name="date" content="11/07/2022">
+        <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style/css/bootstrap.rtl.min.css">
+        <link rel="stylesheet" type="text/css" href="css/css_index.css">
+        <link rel="stylesheet" href="css/estilos.css"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="menuPrincipal.html">Óptica Qualite</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav" style="position: relative; width: 100%">
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="cargarModuloClientes();">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="cargarModuloEmpleados();">Empleados</a>
+                        </li> 
+                        <!-- Navbar dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" onclick="cargarSubModuloAccesorios();">Accesorios</a></li>
+                                <li><a class="dropdown-item" onclick="cargarSubModuloArmazones();">Armazones</a></li>
+                                <li><a class="dropdown-item" onclick="cargarSubModuloLentesContacto();">Lentes de Contacto</a></li>
+                                <li><a class="dropdown-item" onclick="cargarSubModuloMateriales();">Materiales</a></li>
+                                <li><a class="dropdown-item" onclick="cargarSubModuloMicas();">Micas</a></li>
+                                <li><a class="dropdown-item" onclick="cargarSubModuloSoluciones();">Soluciones</a></li>
+                                <li><a class="dropdown-item" onclick="cargarSubModuloTratamientos();">Tratamientos</a></li>
+                            </ul>
+                        </li>
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ventas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" onclick="cargarSubModuloVentasLentes();">Lentes</a></li>
+                                <li><a class="dropdown-item" onclick="cargarSubModuloVentasLentesContacto();">Lentes de Contacto</a></li>
+                                <li><a class="dropdown-item" onclick="cargarModuloVentas();">Productos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="">Examenes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="">Pagos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="">Graduacion</a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="right: 0; position: absolute" onclick="cerrarSesion();">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid col-lg-10"   id="contenedorPrincipal" style="background-color:white; width: 100%; border-radius: 3px;">
+            <div style="text-align: center; padding: 50px 0" class="divContainerI">
+                <img src="resources/imgP.jpg" class="imgMenu" style="height: 600px; border-radius: 5px"/>
+            </div>
+        </div>
+        <footer class="footer" style="height: 20%; width: 100%; padding: 30px">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="cargarModuloVenta()" class="nav-link px-2 text-muted">Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="cargarSubModuloAccesorio();" class="nav-link px-2 text-muted">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">Contacto</a>
+                </li>
+            </ul>
+            <p class="text-center text-muted">© 2022 Endless Development</p>
+        </footer>
+
+        <script src="style/js/bootstrap.bundle.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/sweetalert2.all.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="https://kit.fontawesome.com/384403f204.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>

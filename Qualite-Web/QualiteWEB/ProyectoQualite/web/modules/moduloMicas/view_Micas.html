@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Micas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="../../style/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="container-fluid">
+        <main>
+            <div>
+                <h4 class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white; text-align: center">Gestor de Micas</h4>
+            </div>
+            <br>
+            <div class="d-flex justify-content-end align-items-center">
+                <input type="search" class="formulario__input" name="search" id="txtSearch" placeholder="Search" style="width: 50%">
+                <button class="mt-2 formulario_select_btn m-2" style="border-color: #233A54; border-radius: 3px; color: #233A54" onclick="moduloMicas.buscarMica();"><i class="fa fa-search"></i></button>
+            </div>
+            <br>
+            <form class="formulario_m m-auto" style="padding-top: 20px" id="formulario">
+
+                <div class="formulario__grupo" id="grupo__idMica" hidden="hidden">
+                    <label for="txtIdMica" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">idMica</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="idMica" id="txtIdMica" placeholder="idMica" disabled="disabled">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo se genera automaticamente.</p>
+                </div>
+                
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="txtNombre" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="txtNombre" placeholder="Nombre">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener letras.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__pcompra">
+                    <label for="txtPrcCompra" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Precio de Compra</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="pcompra" id="txtPrcCompra" placeholder="Precio de Compra">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener números.</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__pventa">
+                    <label for="txtPrcVenta" class="formulario__label" style="background-color: #233A54; border-radius: 3px; color: white">*Precio de Venta</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="pventa" id="txtPrcVenta" placeholder="Precio de Venta">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Este campo solo puede contener números.</p>
+                </div>
+            </form>
+        </main>
+        <div class="d-flex justify-content-around margin mt-2">
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloMicas.agregarMica();" id="btnAdd">Agregar</button>
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloMicas.actualizarMica();" id="btnUpdate">Actualizar</button>
+            <button type="button" class="mt-2 formulario__btn" onclick="moduloMicas.limpiarMica();" id="btnClean">Limpiar</button>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="tabla-tamanio" style="padding-bottom: 30px">
+            <table class="maximo table">
+                <thead>
+                    <tr>
+                        <th>idMica</th>
+                        <th>Nombre</th>
+                        <th>Precio Compra</th>
+                        <th>Precio Venta</th>
+                    </tr>
+                </thead>
+                <tbody id="tblMateriales">
+            </table>
+        </div>
+        <script src="https://kit.fontawesome.com/384403f204.js" crossorigin="anonymous"></script>
+        <script src="controller_Micas.js" type="text/javascript"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>
